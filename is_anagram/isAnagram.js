@@ -11,12 +11,10 @@ function isAnagram(a, b) {
   }
 
   for (let c of b) {
-    bMap[c] = !!bMap[c] + 1;
-  }
-
-  for (let c of a) {
-    if (aMap[c] !== bMap[c]) {
+    if (!aMap[c]) {
       return false;
+    } else {
+      aMap[c] -= 1;
     }
   }
 
